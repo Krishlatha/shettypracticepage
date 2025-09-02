@@ -22,6 +22,14 @@ class TestloginPage {
     // Getter method to access the confirmation button using its ID attribute
     get confirmButton() { return cy.get('input[id="confirmbtn"]');}
 
+    // Getter method to access the mouse hover button using its ID attribute
+    get clickMouseHover() { return cy.get('div[class="mouse-hover"]');}
+    
+
+     get topOption() { return cy.get('a[href="#top"]');}
+
+    
+
 //Function will start from below
 
     selectRadio(data) {
@@ -49,6 +57,9 @@ class TestloginPage {
         this.confirmButton.click(data);
     }
 
+      selectMouseHover(data) {
+        this.clickMouseHover.check(data);
+    }
     
 
 

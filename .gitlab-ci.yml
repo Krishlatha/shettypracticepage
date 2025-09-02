@@ -1,0 +1,29 @@
+stages:
+  - install
+  - test
+
+cache:
+  paths:
+    - node_modules/
+
+variables:
+  CI: "true"
+
+install_dependencies:
+  stage: install
+  image: cypress/base:16.14.0   # Cypress Docker image with Node + browsers
+  script:
+    - npm ci
+
+run_cypress_tests:
+  stage: test
+  image: cypress/base:16.14.0
+  script:
+    - npx cypress run --browser chrome
+  artifacts:
+    when: always
+    paths:
+      - cypress/videos/**/*.mp4
+      - cypress/screenshots/**/*.png
+      - cypress/results/**/*.json
+  

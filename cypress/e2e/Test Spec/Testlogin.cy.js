@@ -7,20 +7,17 @@ describe('landingPage',()=>{
         cy.fixture('Testlogindata.json').then((mydata)=>{
             Testlogindata = mydata
         })
-
         cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
-
     })
-
-   
+ 
     it('should select a radio button', () => {
         TestloginPage.selectRadio(Testlogindata.radioButton)
     })
 
-    it.skip('suggession class',()=>{
-        TestloginPage.seletCountryName(Testlogindata.typeToSelectCountry)
+    // it.skip('suggession class',()=>{
+    //     TestloginPage.seletCountryName(Testlogindata.typeToSelectCountry)
 
-    })
+    // })
 
     it('select dropdown option',()=>{
         TestloginPage.selectOption(Testlogindata.dropDownOption)
